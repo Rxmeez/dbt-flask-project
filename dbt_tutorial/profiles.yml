@@ -1,0 +1,14 @@
+default-bq:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: "{{ env_var('DBT_SA') }}"
+      project: natural-ether-284321
+      dataset: dbt_rameez
+      threads: 1
+      timeout_seconds: 100
+      location: US
+      priority: interactive
+      retries: 1
